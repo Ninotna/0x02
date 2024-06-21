@@ -212,7 +212,9 @@ form{
     font-weight: bold;
 }
 
-
+.btn-form-mobile{
+    display: none;
+}
 
 /* Filtre */
 
