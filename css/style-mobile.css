@@ -1,0 +1,412 @@
+/********************* Breakpoints *********************/
+
+/* Pour les mobiles */
+
+@media only screen and (max-width: 767px) {
+   
+    /* Header */
+
+    html{
+        --principale:#0065FC;
+        --secondaire: #DEEBFF;
+        --fond: #F2F2F2;
+    }
+
+    header {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+.header-accueil{
+    display: flex;
+    flex-direction:column;
+    justify-content: space-between;
+    padding: 0 0px 0px 0px;
+    height: auto;
+}
+
+img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+main {
+    margin-bottom:0px;
+}
+
+/* Nav */
+
+nav.header-nav{
+    width: 100%;
+}
+
+.liste-nav {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    gap:0;
+}
+
+.item-nav {
+    position: relative; /* Nécessaire pour positionner correctement le pseudo-élément ::before */
+    width: 100%;
+    height: auto;
+    margin: 0;
+    box-sizing: border-box; /* S'assure que le padding ne change pas les dimensions extérieures */
+    border-bottom: 2px solid var(--fond);
+    padding-bottom: 15px;
+}
+
+.item-nav::before {
+    content: '';
+    position: absolute;
+    bottom: 0; /* Alignez le pseudo-élément au bas du padding, pas au bas du contenu */
+    top:100%;
+    left: 0;
+    width: 0%; /* Initialement, la largeur est de 0 pour cacher le trait */
+    height: 3px; /*largeur trait */
+    background-color: var(--principale); /* La couleur de la barre, bleue selon votre configuration */
+    transition: width 0.4s ease-in-out;
+}
+
+.item-nav a {
+    display: block; /* Assure que le lien remplit .item-nav */
+    margin-right: 0px;
+    font-size: 16px;
+    color: inherit; /* Assure la cohérence des couleurs de texte */
+    text-decoration: none; /* Enlève toute décoration de texte */
+    transition: color 0.4s ease-in-out;
+}
+
+.item-nav:hover::before {
+    width: 100%; /* S'étend sur toute la largeur lorsque .item-nav est survolé */
+}
+
+/* Presentation */
+
+
+.header-presentation{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    padding: 0 20px;
+    gap:8px;
+}
+
+
+.header-presentation h1{
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+.header-presentation p{
+    font-size: clamp(16px, 3vw, 17px);
+}
+
+    /* Section Recherche avec Formulaire */
+
+    .section-recherche{
+        padding: 30px 20px 0px 20px;
+    }
+
+    .conteneur-formulaire input[type="search"] {
+        max-width: 300px;
+        width: 100%;
+        padding: 20px;
+        font-weight: bold;
+        font-size: 18px;
+        border: none;
+        border: 2px solid var(--fond);
+    }
+
+
+    .btn-form-mobile{
+        display: inline-block;
+        width: 50px;
+        height: 100%;
+        padding: 0 10px;
+        border-radius: 15px;
+        border: none;
+        cursor:default;
+        color: white;
+        background-color: var(--principale);
+    }
+
+    .btn-form-desktop {
+       display: none;
+    }
+
+    /* Section Filtres */
+    
+    .box-filtre span{
+        font-size: 14px;
+    }
+  
+    .conteneur-filtre {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 20px ;
+        margin-bottom: 0;
+    }
+
+    .conteneur-filtre h2 {
+        width: 100%; 
+        margin-bottom: 20px;
+        order: -1;
+    }
+
+    .conteneur-filtre .box-filtre {
+        width: calc(50% - 10px); 
+        margin-bottom: 20px; 
+        min-width: 140px;
+    }
+
+/* Infos */
+
+.conteneur-info {
+    display: flex; 
+    align-items: center; 
+    margin-bottom: 35px;
+    margin-top: 15px;
+ }
+
+.conteneur-info p {
+    font-size: 16px; 
+}
+
+ .conteneur-info i{
+    display: flex;
+    align-items:center ;
+    color: var(--principale);
+ }
+
+.icon-circle {
+    height: 24px;
+    width: 24px;
+    border-radius: 100%;
+    border: 3px solid var(--fond);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+  
+} 
+   
+    /* Hebergements et Populaires */
+      
+    main{
+        padding: 0;
+        margin-bottom: 40px;
+    }
+
+
+    /* Bloc populaire */
+
+
+        .conteneur-populaire {
+        order: -1; 
+        height: 569px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        border-radius: 0%;
+        padding:30px 20px;
+      
+    }
+
+
+    #header-populaires {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0px;
+    }
+
+    .conteneur-populaire-titre{
+        color: black;
+        display:flex;
+        align-items: flex-start;
+    }
+
+
+
+    .box-carte-populaire {
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        width: 100%; 
+        gap: 0;
+        height: 468px;
+    }
+    
+    .box-carte-populaire p{
+        margin-top: 5px;
+        margin-bottom: 0px;
+    }
+    
+    .box-carte-populaire a{
+        display: flex;
+        width: 100%;
+    }
+
+    .carte-populaire {
+        width: 90%; 
+        margin: 13px 0; 
+        gap: 15px;
+    }
+   
+    .populaire-img{
+        width: 30%;
+        height: 100%;
+    }
+    
+    .populaire-info{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 10px 5px 5px 15px;
+        width: 70%;
+    }
+
+
+    .box-carte-populaire a {
+        display: flex;
+        width: 100%;
+        height: 145px;
+}
+
+
+    /* Section hebergement */
+
+
+    .main-hebergement,
+     .conteneur-populaire {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .conteneur-hebergement{
+        padding: 20px;
+        width: 100%;
+        padding-left: 20px;
+        margin: 0;
+        background-color: #ffffff;
+        row-gap:15px;
+    }
+   
+   
+    .conteneur-hebergement h2 {
+        background-color: white; 
+        width: auto;  
+    }
+
+    .conteneur-hebergement h3 {
+        background-color: white; 
+    }
+
+    .box-carte-hebergement{
+
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        background-color: white;
+        row-gap:15px; 
+   }
+
+    .carte-hebergement{
+        height: 207.25px;
+        width: 100%;
+        margin: 0px 0 0 0;
+    }
+
+    .hebergement-img{
+        height: 60%;
+    }
+    
+    .hebergement-info{
+        height:40%;
+        padding: 10px 15px;
+    }
+    
+    .hebergement-info p{
+        margin: 5px 0;
+    }
+
+
+    #afficher-plus {
+        padding-bottom: 0px;
+        padding-top: 0px;
+        font-weight: 900;
+        font-size: 16px;
+        margin-left: 10px;
+    }
+    
+    /*activités*/
+
+    .main-activite{
+        padding: 30px 30px 30px 30px;
+    }
+
+    .main-activite h2 {
+        align-self: flex-start;
+      
+    }
+
+    .main-activite img{
+        height: 141px; 
+     }
+
+    .titre-activite {
+        margin-bottom:30px;
+    }
+
+    .conteneur-carte-activite{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 0;
+        height: auto;
+        
+    }
+
+    .conteneur-carte-activite a {
+        position: relative;
+        width: 100%;
+        /* height: 250px; */
+        border-radius: 20px;
+        overflow: hidden;
+    }
+
+    figcaption{
+        position: absolute;
+        bottom: 0;
+        padding-left: 20px;
+        width: 100%;
+        line-height: 50px; /* !! */
+        font-weight: 700;
+        color: black;
+        background-color: white;
+    }
+
+
+    /* Footer */
+
+    footer {
+        flex-direction: column; 
+        margin-left: 0px;
+        padding: 30px;
+        row-gap: 50px;
+    }
+
+    .footer-infos, .footer-hebergement, .footer-assistance {
+        width:100%;
+    }
+
+}

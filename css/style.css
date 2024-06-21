@@ -1,0 +1,525 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+}
+
+/* Balises principales - Variables */
+
+html{
+    --principale:#0065FC;
+    --secondaire: #DEEBFF;
+    --fond: #F2F2F2;
+}
+
+/*********************/
+
+body{
+    max-width: 1340px;
+    overflow-x: hidden;
+    margin: 0 auto;
+    min-width:320px;
+}
+
+h1{
+    font-size: clamp(22px, 3vw, 25px);
+}
+
+h2 {
+    font-size: clamp(18px, 3vw, 21px);
+}
+
+h3 {
+    font-size: 15px;
+}
+.centrer-flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+li{
+    list-style-type: none;
+}
+
+/********************* Header *********************/
+
+/* Div header-accueil avec .header-logo, header-nav et la nav bar en général */
+
+.header-accueil{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0px 0 0px;
+    height:79px;
+}
+
+.header-logo img{
+    width: 61px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 30px 0px 30px 0px;
+  
+}
+
+/* Nav */
+
+nav.header-nav{
+    width: 100%;
+
+}
+
+.liste-nav {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    gap: 68px;
+}
+
+.item-nav {
+    position: relative;
+    height: 79px;
+    padding-top: 0px;
+    flex: 0 1 auto; /* grow, shrink, basis - Ajuster au besoin pour l'alignement et la taille */
+}
+
+.item-nav::before {
+    content: '';
+    position: absolute;
+    top: 0; /* La ligne se positionne en haut du conteneur liste-nav */
+    left: 0;
+    width: 0%; /* Initialement, la largeur est de 0 */
+    height: 3px;
+    background-color: var(--principale);
+    transition: width 0.4s ease-in-out;
+}
+
+.item-nav:hover::before {
+    width: 100%; /* La ligne s'étend sur toute la largeur de l'élément item-nav */
+}
+
+.item-nav a {
+    margin-right: 0px;
+    font-size: 16px;
+    transition: color 0.4s ease-in-out;
+    position: relative; /* Permet de maintenir le lien au-dessus du pseudo-élément */
+    z-index: 3;
+}
+
+.item-nav:hover a {
+    color: var(--principale);
+}
+
+
+/* Section Presentation avec .header.presentation */
+
+
+.header-presentation{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* padding: 0 50px; */
+    gap:8px;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.header-presentation h1{
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+.header-presentation p{
+    font-size: clamp(16px, 3vw, 17px);
+}
+
+    /* Section Recherche (Form, 2 div: .conteneur-filtre, .conteneur-info) */ 
+
+.section-recherche{
+    padding: 30px 0px 0px 0px;
+}
+
+/* Formulaire */
+
+/* Form avec 2 div (.conteneur-formulaire, .conteneur-btn-form) */
+
+form{
+    display: flex;
+    height: 49px;
+   
+}
+
+.conteneur-formulaire{
+    display: flex;
+   
+}
+    
+.conteneur-formulaire label{
+    width: 60px;
+    font-size: 22px;
+    border-radius: 20px 0 0 20px;
+    cursor:default;
+    background-color: var(--fond);
+    justify-content: center;
+}
+
+.conteneur-formulaire input[type='search']{
+    max-width: 300px;
+    min-width: 160px;
+    width: 100%;
+    padding: 20px;
+    font-weight: bold;
+    font-size: 20px;
+    border: none;
+    border: 2px solid var(--fond);
+}
+
+.conteneur-btn-form{
+    position: relative;
+    right: 15px;
+    font-size: 20px;  
+    border-radius: 10px;
+}
+
+.btn-form-desktop{
+    width: 100%;
+    height: 100%;
+    padding: 0 20px;
+    border: none;
+    border-radius: 0 20px 20px 0;
+    cursor: default;
+    color: white;
+    background-color: var(--principale);
+    font-weight: bold;
+}
+
+
+
+/* Filtre */
+
+    .conteneur-filtre {
+    margin-top: 35px;
+    margin-bottom: 35px;
+    display: flex; 
+    align-items: self-start; 
+    gap: 10px; 
+  }
+   
+
+   .box-filtre span {
+    font-weight: bold;
+    font-size: 17px;
+    color: black;
+      
+  }
+
+  .box-filtre {
+    color: var(--principale);
+    margin-top: -10px;
+    display: flex;
+    align-items: center; 
+    height: 50px; 
+    padding: 4px 19px; 
+    gap: 10px; 
+    border-radius: 25px; 
+    border: 2px solid #D9D9D9; 
+    background: white; 
+    cursor:default; 
+    transition: background-color 0.3s; 
+  }
+  
+   .filtre-logo {
+    width: 24px; 
+    height: 24px; 
+  }
+  
+  
+  .box-filtre:hover {
+    background-color: var(--secondaire); 
+    color: white; 
+  }
+
+
+   /* Infos Div .conteneur-info */
+
+.conteneur-info {
+    display: flex; 
+    align-items: center; 
+    margin-bottom: 35px;
+    margin-top: 35px;
+ }
+
+.conteneur-info p {
+    font-size: clamp(14px, 3vw, 18px); 
+}
+
+ .conteneur-info i{
+    display: flex;
+    align-items:center ;
+    color: var(--principale);
+ }
+
+.icon-circle {
+    height: 25px;
+    width: 25px;
+    border-radius: 100%;
+    border: 3px solid var(--fond);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+  
+} 
+
+/********************* Main *********************/
+
+main{
+    padding: 0;
+}
+
+   /* Section .main-hebergement */
+
+.main-hebergement{
+    margin: 0 auto;
+    display: flex;  
+    justify-content: space-between;
+}
+
+   /* Div .conteneur-hebergement */
+
+.conteneur-hebergement{
+    width: 68%; 
+    padding: 30px;
+    border-radius: 15px;
+    background-color: var(--fond);
+   /*  margin-left: 30px; */
+    margin-right: 40px;
+    display:flex;
+    flex-direction: column;
+    row-gap:30px;
+}
+
+.box-carte-hebergement{
+    width: 100%;
+    display: flex;
+    justify-content: space-between; 
+    flex-wrap: wrap;
+    row-gap:30px;
+}
+
+.fa-star {
+    color: var(--principale);
+}
+
+
+
+.neutral-star {
+   color: var(--fond);
+}
+
+.carte-hebergement{
+    border-radius: 30px;
+    overflow: hidden;
+    margin: 0;
+    width: 32%;
+    cursor: pointer;
+    border: 5px solid #ffffff;
+    box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.10);
+    background-color: rgb(255, 255, 255);
+}
+
+.hebergement-img img{
+    height: 124px;
+}
+
+.hebergement-info{
+    padding: 10px 15px;
+}
+
+.hebergement-info p{
+    margin: 5px 0;
+}
+
+#afficher-plus h3{
+    transition: color 0.4s ease-in-out;
+}
+
+#afficher-plus h3:hover{
+    color: var(--principale);
+}
+
+#afficher-plus{
+    font-weight: 900;
+    font-size: 21px;
+    padding-top:15px;
+}
+
+/* Bloc populaire */
+
+.fa-chart-line {
+    color: var(--principale);
+}
+
+#header-populaires {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    width:100%;
+}
+
+.conteneur-populaire{
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    border-radius: 15px;
+    background-color: var(--fond);
+}
+
+.conteneur-populaire-titre{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: black;
+}
+
+.box-carte-populaire{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 30px;
+   
+}
+
+.box-carte-populaire p{
+    margin-top: 5px;
+}
+
+.box-carte-populaire a{
+    display: flex;
+    width: 100%;
+}
+
+.carte-populaire{
+    display: flex;
+    border: 5px solid #ffffff;
+    border-radius: 30px;
+    overflow: hidden;
+    cursor: pointer;
+    width: 100%;
+    height: 146px;
+    box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.10);
+    background-color: rgb(255, 255, 255);
+} 
+
+.populaire-img{
+    width: 40%;
+    height: 100%;
+}
+
+.populaire-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px 5px 5px 15px;
+    width: 60%;
+}
+
+/* Section .main-activite (attention à la height des imgs) */
+
+.main-activite{
+    padding: 65px 30px 65px 30px;
+}
+
+.main-activite img{
+    height: 380px; 
+ }
+
+/* Div #activite .titre-activite avec une balise h2 */
+
+
+/* Div .conteneur-carte-activite */
+
+
+.conteneur-carte-activite{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top:30px;
+    gap:30px;
+}
+
+.conteneur-carte-activite a{
+    position: relative;
+    width: 23%;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 0px auto;
+    box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.10);
+    gap: 10px;
+    align-self: stretch;
+}
+
+
+.carte-activite{
+    height: 100%;
+}
+
+figcaption{
+    position: absolute;
+    bottom: 0;
+    padding-left: 20px;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    font-weight: 900;
+    color: black;
+    background-color: white;
+}
+
+
+/*Footer */
+
+footer{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: var(--fond);
+}
+
+footer h2 {
+    padding-bottom: 15px;
+}
+
+/* pour aligner vers les gauches les sous-menus du footer */ 
+.footer-infos, .footer-hebergement, .footer-assistance {
+    width:30%;
+}
+
+.item-footer{
+    margin-bottom: 15px;
+    transition: color 0.4s ease-in-out;
+}
+
+.item-footer a:hover {
+    color: var(--principale);
+}
